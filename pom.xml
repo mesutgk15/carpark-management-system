@@ -10,6 +10,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>carpark-service</module>
+        <module>eureka-service</module>
+        <module>gate-service</module>
     </modules>
 
     <properties>
