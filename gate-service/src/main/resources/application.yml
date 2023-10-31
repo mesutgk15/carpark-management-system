@@ -3,3 +3,22 @@ server:
 spring:
   application:
     name: gate-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/gate_log
+    password: fD!SD@Qn8H
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+    properties:
+      hibernate:
+        format_sql: true
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost/8761
+    register-with-eureka: true
+    fetch-registry: true
+

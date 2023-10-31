@@ -12,6 +12,7 @@
         <module>carpark-service</module>
         <module>eureka-service</module>
         <module>gate-service</module>
+        <module>client</module>
     </modules>
 
     <properties>

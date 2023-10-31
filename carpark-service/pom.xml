@@ -47,6 +47,12 @@
             <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
+            <groupId>project.carparkmanagement</groupId>
+            <artifactId>client</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>

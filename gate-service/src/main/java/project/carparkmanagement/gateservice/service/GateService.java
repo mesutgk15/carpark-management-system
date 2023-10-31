@@ -1,6 +1,11 @@
 package project.carparkmanagement.gateservice.service;
 
+import project.carparkmanagement.client.carpark.VehicleEntryRequest;
+import project.carparkmanagement.client.carpark.VehicleEntryResponse;
+import project.carparkmanagement.gateservice.model.GateLog;
+
 public interface GateService {
 
-    void enterVehicle(long carparkid, long vehicleid);
+    VehicleEntryResponse enterVehicle(VehicleEntryRequest vehicleEntryRequest);
+    VehicleEntryResponse exitVehicle(VehicleEntryRequest vehicleEntryRequest);
 }
