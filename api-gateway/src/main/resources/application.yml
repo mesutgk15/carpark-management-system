@@ -1,0 +1,25 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: gate_service_route
+          uri: lb://GATE-SERVICE
+          predicates:
+            - Path=/gate/**
+        - id: carpark_service_route
+          uri: lb://CARPARK-SERVICE
+          predicates:
+            - Path=/carparks/**
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost/8761
+    register-with-eureka: true
+    fetch-registry: true
+
+

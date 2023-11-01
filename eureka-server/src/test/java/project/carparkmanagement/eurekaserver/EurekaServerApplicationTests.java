@@ -1,10 +1,10 @@
-package project.carparkmanagement.carparkservice.eurekaservice;
+package project.carparkmanagement.eurekaserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EurekaServiceApplicationTests {
+class EurekaServerApplicationTests {
 
     @Test
     void contextLoads() {

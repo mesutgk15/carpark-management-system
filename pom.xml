@@ -10,9 +10,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>carpark-service</module>
-        <module>eureka-service</module>
+        <module>eureka-server</module>
         <module>gate-service</module>
         <module>client</module>
+        <module>api-gateway</module>
     </modules>
 
     <properties>
