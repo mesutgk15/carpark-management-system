@@ -13,8 +13,7 @@ public interface ResidentService {
     ResidentDTO save(ResidentDTO residentDTO);
 
     void delete(long id);
-    Set<Vehicle> removeVehicle (Resident resident, Vehicle vehicle);
-//    Set<Vehicle> addVehicle (long residentId, long vehicleId);
+
     Resident findById(long id);
     List<ResidentDTO> findAll();
 

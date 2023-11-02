@@ -99,10 +99,10 @@ public class InitializerTestClient implements ApplicationRunner {
             System.out.println("\tAdding Vehicle to another Resident");
             vehicleServiceImpl.setOwner("34ABCD123", 2);
             System.out.println("\tRemoving Vehicle not belongs to Resident");
-            residentService.removeVehicle(resident2, vehicle2);
-            residentService.removeVehicle(resident1, vehicle1);
+            vehicle2.setOwner(resident2);
+            vehicle1.setOwner(resident1);
             System.out.println("\tRemoving Vehicle");
-            residentService.removeVehicle(resident2, vehicle1);
+            vehicle1.setOwner(null);
             vehicleServiceImpl.setOwner("34ABCD123", 1);
 
 
@@ -117,24 +117,8 @@ public class InitializerTestClient implements ApplicationRunner {
             System.out.println(carparkDTO1.getVehiclesInsideConsumesSpace());
 
             System.out.println("-".repeat(40));
-            System.out.println("EXIT ALL VEHICLES");
 
 
-
-//        for (Vehicle v : vehicles) {
-//            carpark1.getOccupancyRate();
-//            carparkService.exitVehicle(carpark1, v);
-//            carpark1.getOccupancyRate();
-//
-//            for (int i = 0; i < 20; i++) {
-//                System.out.printf(i == 19 ? ".\n" : ".");
-//                try {
-//                    Thread.sleep(200);
-//                } catch (InterruptedException e) {
-//                    throw new RuntimeException(e);
-//                }
-//            }
-//        }
         }
     }
 }

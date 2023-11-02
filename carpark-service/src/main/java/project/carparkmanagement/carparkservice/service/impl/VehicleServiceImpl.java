@@ -59,21 +59,12 @@ public class VehicleServiceImpl implements VehicleService {
     public VehicleDTO setOwner(String plateNumber, long residentId) {
 
         Vehicle vehicle = findByPlateNumber(plateNumber);
-        Resident owner = residentService.findById(residentId);
-
-
-        //In case if the owner of the vehicle was already assigned to another resident,
-        //remove it from its current owner
-        if (vehicle.getOwner() != null) {
-//             residentService.removeVehicle(vehicle.getOwner(), vehicle);
-        }
+        Resident owner = null;
+        if (residentId != 0)
+            owner = residentService.findById(residentId);
 
         vehicle.setOwner(owner);
         System.out.printf("-Owner set for Vehicle (%s)\n", vehicle.getPlateNumber());
-//        if (residentService.addVehicle(residentId, vehicleId))
-//            System.out.printf("-Vehicle (%s) added to Resident's (%s) Vehicle list\n", vehicle.getPlateNumber(), owner.getName());
-//        else
-//            System.out.print("\t-It was already on Resident's Vehicle list or something went wrong\n");
 
         vehicleRepository.save(vehicle);
         return vehicle2VehicleDTO.map(vehicle);

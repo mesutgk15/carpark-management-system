@@ -40,7 +40,7 @@ public class CarparkDTO2Carpark implements BaseMapper<Carpark, CarparkDTO>{
             carpark.setName(name);
         if (vehiclesInside != null && !vehiclesInside.isEmpty())
             carpark.setVehiclesInside(vehiclesInside.stream().map(v -> vehicleDTO2Vehicle.map(v)).collect(Collectors.toSet()));
-        if (vehiclesInside != null && !vehiclesInsideConsumesSpace.isEmpty())
+        if (vehiclesInsideConsumesSpace != null && !vehiclesInsideConsumesSpace.isEmpty())
             carpark.setVehiclesInsideConsumesSpace(vehiclesInsideConsumesSpace.stream().map(v -> vehicleDTO2Vehicle.map(v)).collect(Collectors.toSet()));
 
         return carpark;
