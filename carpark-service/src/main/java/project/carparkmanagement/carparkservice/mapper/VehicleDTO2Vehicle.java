@@ -16,7 +16,6 @@ import project.carparkmanagement.carparkservice.service.VehicleService;
 public class VehicleDTO2Vehicle implements BaseMapper<Vehicle, VehicleDTO> {
 
     private final VehicleService vehicleService;
-    private final ResidentDTO2Resident residentDTO2Resident;
     private final ResidentService residentService;
 
     @Override
@@ -53,9 +52,10 @@ public class VehicleDTO2Vehicle implements BaseMapper<Vehicle, VehicleDTO> {
             vehicle.setFuelType(fuelType);
         if (authorizedToGetIn != null)
             vehicle.setAuthorizedToGetIn(authorizedToGetIn);
-        if (ownerID != null)
-            vehicle.setOwner(residentService.findById(ownerID));
         vehicle.setConsumesSpace(consumesSpace);
+        //Below should keep commented out, owner can be modified with vehicles/owners:
+/*        if (ownerID != null)
+            vehicle.setOwner(residentService.findById(ownerID));*/
 
         return vehicle;
     }

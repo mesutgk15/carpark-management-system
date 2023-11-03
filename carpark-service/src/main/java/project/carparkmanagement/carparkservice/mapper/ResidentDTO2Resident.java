@@ -17,9 +17,8 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor(onConstructor_ = @Lazy)
 public class ResidentDTO2Resident implements BaseMapper<Resident, ResidentDTO> {
 
-    private final ResidentServiceImpl residentService;
     @Lazy
-    private final VehicleDTO2Vehicle vehicleDTO2Vehicle;
+    private final ResidentServiceImpl residentService;
 
     @Override
     public Resident map(ResidentDTO residentDTO, Object... params) {
@@ -40,13 +39,12 @@ public class ResidentDTO2Resident implements BaseMapper<Resident, ResidentDTO> {
             resident.setApartmentNumber(apartmentNumber);
         if (contactNumber != null)
             resident.setContactNumber(contactNumber);
-        if (vehicles != null && !vehicles.isEmpty())
-            resident.setVehicles(vehicles.stream().map(v ->
-                    vehicleDTO2Vehicle.map(v)).collect(Collectors.toSet()));
-        if (carparkAllowance != null) {
+        if (carparkAllowance != null)
             resident.setCarparkAllowance(carparkAllowance);
-        }
-
+        //Below should keep commented out to not let modify of vehicle list from resident object:
+        /*        if (vehicles != null && !vehicles.isEmpty())
+            resident.setVehicles(vehicles.stream().map(v ->
+                    vehicleDTO2Vehicle.map(v)).collect(Collectors.toSet()));*/
         return resident;
     }
 }
