@@ -1,7 +1,10 @@
 # carpark-management-system
-- Powered by Spring Boot V2.7.5
+- Is a REST Api developed in Java with Spring Boot (2.7.5)
 ### GOAL
-Project aims to manage to save the data of the vehicles and manage the carpark usage in a residential complex.
+Project aims to build
+up the backend technology of an application which saves the data of the vehicles in a residential complex and
+manage the carpark usage and set the effiency to utmost level while providing higher security for the area of
+use.
 #### How to Use
 We have two main services to use the application:
 - Gate-service
